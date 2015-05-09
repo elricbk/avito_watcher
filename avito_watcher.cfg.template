@@ -1,0 +1,11 @@
+[root]
+query = /moskva?q=test
+
+smtp_host = smtp.example.org
+smtp_user = user@example.org
+smtp_password = UserPassword
+
+mail_from = user@example.org
+mail_to = other@example.org
+mail_subject = Новые объявления на Avito
+known_id_list_file = /tmp/id_list

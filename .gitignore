@@ -55,3 +55,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Actual config file
+avito_watcher.cfg
