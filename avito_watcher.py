@@ -48,12 +48,16 @@ def check_avito(cfg):
     item_list = get_item_list(cfg)
     outer = setup_email_root(cfg)
     new_items_found = False
+    count = 0
     for item in item_list:
+        if count >= cfg.max_items_to_send():
+            break
         if not known_ids.contains(item.item_id):
             new_items_found = True
             logger.debug("Going to attach %s", item)
             outer.attach(mail_builder.build_email(item))
             known_ids.add_id(item.item_id)
+            count += 1
     if new_items_found:
         logger.info("New items found, will send a notification")
         send_email(cfg, outer)

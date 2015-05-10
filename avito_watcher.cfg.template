@@ -9,3 +9,5 @@ mail_from = user@example.org
 mail_to = other@example.org
 mail_subject = Новые объявления на Avito
 known_id_list_file = /tmp/id_list
+
+max_items_to_send = 20

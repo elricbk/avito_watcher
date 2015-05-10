@@ -2,7 +2,7 @@ import ConfigParser
 
 class Config(object):
     def __init__(self, fname):
-        self.__parser = ConfigParser.RawConfigParser()
+        self.__parser = ConfigParser.RawConfigParser({'max_items_to_send' : 20})
         self.__parser.read(fname)
 
     def query(self):
@@ -28,3 +28,6 @@ class Config(object):
 
     def known_id_list_file(self):
         return self.__parser.get('root', 'known_id_list_file')
+
+    def max_items_to_send(self):
+        return self.__parser.getint('root', 'max_items_to_send')
