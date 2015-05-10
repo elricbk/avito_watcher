@@ -5,7 +5,7 @@ def retryable_get(url, retry_count=5):
         try:
             r = requests.get(url, timeout=1)
             return r
-        except requests.ConnectionError:
+        except requests.exceptions.RequestException:
             pass
     return None
 
